@@ -1,0 +1,10 @@
+/media/kevin/data/vscode/ReloadingBench/bin/debug/netcoreapp2.0/ReloadingBench.deps.json
+/media/kevin/data/vscode/ReloadingBench/bin/debug/netcoreapp2.0/ReloadingBench.runtimeconfig.json
+/media/kevin/data/vscode/ReloadingBench/bin/debug/netcoreapp2.0/ReloadingBench.runtimeconfig.dev.json
+/media/kevin/data/vscode/ReloadingBench/bin/debug/netcoreapp2.0/ReloadingBench.dll
+/media/kevin/data/vscode/ReloadingBench/bin/debug/netcoreapp2.0/ReloadingBench.pdb
+/media/kevin/data/vscode/ReloadingBench/obj/debug/netcoreapp2.0/ReloadingBench.csproj.CoreCompileInputs.cache
+/media/kevin/data/vscode/ReloadingBench/obj/debug/netcoreapp2.0/ReloadingBench.AssemblyInfoInputs.cache
+/media/kevin/data/vscode/ReloadingBench/obj/debug/netcoreapp2.0/ReloadingBench.AssemblyInfo.cs
+/media/kevin/data/vscode/ReloadingBench/obj/debug/netcoreapp2.0/ReloadingBench.dll
+/media/kevin/data/vscode/ReloadingBench/obj/debug/netcoreapp2.0/ReloadingBench.pdb
