@@ -1,0 +1,39 @@
+@page 
+@model IndexModel
+@using MongoDB.Driver
+@using MongoDB.Bson
+<div>
+    <h3>Existing Powders</h3> 
+    <table class="table">
+        <thead><th>Brand</th><th>Name</th></thead>
+        <tbody>
+            @foreach(var item in Model.PowderTypes)
+            {
+                <tr>
+                    <td>@item.Brand</td> 
+                    <td>@item.Name</td> 
+                    <td>
+                        <a asp-page="./Delete" asp-route-id="@item.ID">
+                            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                        </a>
+                       
+                        <a asp-page="./Edit" asp-route-id="@item.ID">
+                                <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                        </a>
+                        
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<div>
+    <h3>Add New Powders</h3>
+    <form class="form-inline " method="POST">
+        <div class="form-group "><label>Brand:</label><input class="form-control"  asp-for="NewPowder.Brand"></div>
+        <div class="form-group "><label>Name:</label><input class="form-control" asp-for="NewPowder.Name"></div>
+        <button type="submit" class="btn btn-default btn-lrg">
+            <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span>
+        </button>
+    </form>
+</div>

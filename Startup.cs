@@ -22,6 +22,12 @@ namespace ReloadingBench
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+
+            services.AddTransient<IBulletRepository, BulletRepository>();
+            services.AddTransient<IPrimerRepository, PrimerRepository>();
+            services.AddTransient<IPowderRepository, PowderRepository>();
+            services.AddTransient<ICartridgeRepository, CartridgeRepository>();
+            services.AddTransient<ILotRepository, LotRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
