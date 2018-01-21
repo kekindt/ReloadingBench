@@ -18,7 +18,7 @@ docker run -d -p 27017:27017 --name mongo -v /local/storage/dir:data/db mongo:la
 Download and build the ReloadingBench source or run from Docker.
 
 ```
-docker run -d -p 41277:80 --name reloadingbench kekindt/reloadingbench:latest
+docker run -d -p 41277:80 --name reloadingbench -e mongo_url="mongodb://mongo:27017" kekindt/reloadingbench:latest
 ```
 
 ## Feedback

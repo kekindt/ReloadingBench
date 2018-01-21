@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using MongoDB.Driver;
 using MongoDB.Bson;
+using Microsoft.Extensions.Configuration;
 
 namespace ReloadingBench
 {
@@ -8,7 +9,7 @@ namespace ReloadingBench
     {
         protected const string collectionName = "bullets";
 
-        public BulletRepository() : base(collectionName)
+        public BulletRepository(IConfiguration configuration) : base(configuration, collectionName)
         {
 
         }

@@ -1,5 +1,7 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.Extensions.Configuration;
 using MongoDB.Bson;
 using MongoDB.Driver;
 
@@ -12,9 +14,14 @@ namespace ReloadingBench
         public List<string> databases;
         IMongoCollection<T> collection;
 
-        public MongoBaseRepository(string collectionName)
+        public MongoBaseRepository(IConfiguration configuration, string collectionName)
         {
-            var connectionString = "mongodb://localhost:27017";
+            var connectionString = configuration.GetValue<string>("mongo_url");
+            if (string.IsNullOrEmpty(connectionString))
+            {
+                connectionString = "mongodb://localhost:27017";
+            }
+            Console.WriteLine($"Using Mongo URL: {connectionString}");
             client = new MongoClient(connectionString);
             //var handle = client.StartSession();
 
@@ -49,7 +56,7 @@ namespace ReloadingBench
 
         public bool DeleteItem(ObjectId id)
         {
-            if(id != null && id != ObjectId.Empty)
+            if (id != null && id != ObjectId.Empty)
             {
                 collection.DeleteOne(Builders<T>.Filter.Eq(r => r.ID, id));
             }

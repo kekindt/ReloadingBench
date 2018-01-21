@@ -13,7 +13,10 @@ namespace ReloadingBench
     {
         public Startup(IConfiguration configuration)
         {
-            Configuration = configuration;
+            var builder = new ConfigurationBuilder();
+            builder.AddEnvironmentVariables();
+            Configuration = builder.Build();
+            
         }
 
         public IConfiguration Configuration { get; }
@@ -22,7 +25,7 @@ namespace ReloadingBench
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
-
+            services.AddSingleton(typeof(IConfiguration), Configuration);
             services.AddTransient<IBulletRepository, BulletRepository>();
             services.AddTransient<IPrimerRepository, PrimerRepository>();
             services.AddTransient<IPowderRepository, PowderRepository>();
